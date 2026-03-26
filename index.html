@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arth Academy — From Concepts to Confidence in Mathematics</title>
+  <meta name="description"
+    content="Expert Mathematics coaching for Class 9–12 by Pankaj Sir (IIT Kanpur). CBSE Board & JEE Mains/Advanced preparation. New batch starts 15th April 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --green-900: #071a10;
+      --green-800: #0d2b1a;
+      --green-700: #133d26;
+      --green-600: #1a5233;
+      --green-500: #1e6b3f;
+      --green-400: #2a9057;
+      --green-300: #3db872;
+      --gold-400: #c9a84c;
+      --gold-300: #e8c86a;
+      --gold-200: #f5e0a0;
+      --cream: #faf8f3;
+      --white: #ffffff;
+      --text-dark: #0d1f15;
+      --text-mid: #3a5544;
+      --text-muted: #6b8a76;
+      --border: rgba(30, 107, 63, 0.12);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* ───────────────────────────────────────────────
+       SCROLLBAR
+    ─────────────────────────────────────────────── */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--green-900);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold-400);
+      border-radius: 3px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 24px;
+      }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      height: 100px; 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      background: transparent;
+    }
+
+    nav.scrolled {
+      height: 72px; 
+      background: rgba(7, 26, 16, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(201, 168, 76, 0.2);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transform-origin: left center;
+    }
+
+    nav:not(.scrolled) .nav-logo {
+      transform: scale(1.4);
+    }
+
+    @media (max-width: 768px) {
+      nav:not(.scrolled) .nav-logo {
+        transform: scale(1.15); 
+      }
+    }
+
+    .nav-logo-mark {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 0.02em;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:not(.nav-cta):hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      background: var(--gold-400) !important;
+      color: var(--green-900) !important;
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700 !important;
+      font-size: 0.88rem !important;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-300) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 991px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: rgba(7, 26, 16, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 2.5rem 5vw;
+        gap: 1.8rem;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 5vw 100px;
+      position: relative;
+      overflow: hidden;
+      background: var(--green-900);
+    }
+
+    .hero-mesh {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(30, 107, 63, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(19, 61, 38, 0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 30% at 50% 100%, rgba(13, 43, 26, 0.8) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }
+
+    #math-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .msym {
+      position: absolute;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: rgba(201, 168, 76, 0.18);
+      animation: riseUp linear infinite;
+      user-select: none;
+      will-change: transform, opacity;
+      line-height: 1;
+    }
+
+    @keyframes riseUp {
+      0% {
+        transform: translateY(110vh) rotate(-5deg) scale(0.7);
+        opacity: 0;
+      }
+
+      8% {
+        opacity: 1;
+      }
+
+      92% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-20vh) rotate(20deg) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .hero-line {
+      position: absolute;
+      top: 0;
+      left: 5vw;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(201, 168, 76, 0.4) 40%, rgba(201, 168, 76, 0.15) 80%, transparent);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--gold-300);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.5rem;
+      border-radius: 100px;
+      margin-bottom: 2.8rem;
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-400);
+      animation: pulse 1.5s ease infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(1.5);
+      }
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 9vw, 6.5rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.9s ease 0.15s both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-400);
+    }
+
+    .hero-sub {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 640px;
+      margin: 0 auto 3.5rem;
+      line-height: 1.8;
+      font-weight: 300;
+      animation: fadeUp 0.9s ease 0.3s both;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      align-items: center;
+      animation: fadeUp 0.9s ease 0.45s both;
+    }
+
+    .btn-gold {
+      padding: 1rem 2.6rem;
+      border-radius: 10px;
+      background: var(--gold-400);
+      color: var(--green-900);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-300);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 45px rgba(201, 168, 76, 0.5);
+    }
+
+    .btn-outline {
+      padding: 1rem 2.4rem;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4rem;
+      margin-top: 6rem;
+      padding-top: 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      animation: fadeUp 0.9s ease 0.6s both;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.6rem;
+      color: var(--gold-300);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-stat span {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.38);
+    }
+
+    /* ───────────────────────────────────────────────
+       KEYFRAMES
+    ─────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      padding: 130px 0;
+      position: relative;
+    }
+
+    .label-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--green-500);
+      margin-bottom: 1.4rem;
+    }
+
+    .label-tag::before {
+      content: '';
+      width: 36px;
+      height: 1.5px;
+      background: var(--green-500);
+    }
+
+    .heading-xl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+
+    .heading-xl em {
+      font-style: italic;
+      color: var(--green-500);
+    }
+
+    .heading-xl.light {
+      color: var(--white);
+    }
+
+    .heading-xl.light em {
+      color: var(--gold-300);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.85s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 0.85s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-d2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-d3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-d4 {
+      transition-delay: 0.4s;
+    }
+
+ 
+    .mentor-section {
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .mentor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 7vw;
+      align-items: center;
+    }
+
+    .mentor-card {
+      background: linear-gradient(145deg, var(--green-700), var(--green-900));
+      padding: 4rem;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(7, 26, 16, 0.2), 0 0 0 1px rgba(201, 168, 76, 0.15);
+    }
+
+    .mentor-card::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.1), transparent 70%);
+    }
+
+    .mentor-card::after {
+      content: '∑';
+      position: absolute;
+      bottom: -10px;
+      right: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+    }
+
+    .mentor-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .mentor-title {
+      color: var(--gold-300);
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+
+    .mentor-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .pill.gold {
+      background: rgba(201, 168, 76, 0.15);
+      border-color: rgba(201, 168, 76, 0.35);
+      color: var(--gold-300);
+    }
+
+    .mentor-facts {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .mentor-facts li {
+      display: flex;
+      gap: 1.4rem;
+      align-items: flex-start;
+    }
+
+    .fact-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(30, 107, 63, 0.1);
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+
+    .fact-body strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .fact-body p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+
+    .courses-section {
+      background: var(--cream);
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .course-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-500), var(--green-300));
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .course-card.gold-top::before {
+      background: linear-gradient(90deg, var(--gold-400), var(--gold-300));
+      opacity: 1;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--green-400);
+      box-shadow: 0 24px 60px rgba(30, 107, 63, 0.12);
+    }
+
+    .course-card:hover::before {
+      opacity: 1;
+    }
+
+    .course-tag {
+      display: inline-block;
+      background: var(--green-500);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      margin-bottom: 1.8rem;
+    }
+
+    .course-tag.alt {
+      background: var(--gold-400);
+      color: var(--green-900);
+    }
+
+    .course-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .course-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .course-features li {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .course-features li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .course-features li::before {
+      content: '✓';
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(30, 107, 63, 0.1);
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      color: var(--green-500);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .course-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 3rem;
+      justify-content: center;
+    }
+
+    .badge {
+      background: rgba(30, 107, 63, 0.07);
+      border: 1px solid rgba(30, 107, 63, 0.15);
+      color: var(--green-600);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+    }
+
+    .why-section {
+      background: var(--green-900);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .why-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      padding: 2.8rem 2.4rem;
+      transition: background 0.4s, border-color 0.4s, transform 0.4s;
+    }
+
+    .why-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(201, 168, 76, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .why-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .why-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .why-card p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.75;
+    }
+
+    .enroll-section {
+      background: var(--white);
+    }
+
+    .enroll-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7vw;
+      align-items: center;
+    }
+
+    .offer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    .offer-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+    }
+
+    .offer-list li::before {
+      content: '✦';
+      color: var(--gold-400);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .enroll-card {
+      background: var(--green-900);
+      border-radius: 28px;
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(7, 26, 16, 0.15);
+    }
+
+    .enroll-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top, rgba(201, 168, 76, 0.08), transparent 60%);
+      pointer-events: none;
+    }
+
+    .enroll-card-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 0.5rem;
+    }
+
+    .enroll-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .qr-box {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .qr-box svg {
+      display: block;
+    }
+
+    .qr-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .qr-link:hover {
+      color: var(--gold-300);
+    }
+
+    .batch-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: 100px;
+      padding: 0.6rem 1.4rem;
+      margin-top: 2rem;
+      font-size: 0.83rem;
+      color: var(--gold-300);
+      font-weight: 600;
+    }
+
+    .testimonials-section {
+      background: var(--cream);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .t-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.8rem;
+      position: relative;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .t-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(30, 107, 63, 0.1);
+    }
+
+    .t-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(30, 107, 63, 0.08);
+      pointer-events: none;
+    }
+
+    .t-quote {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .t-author {
+      font-weight: 700;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+    }
+
+    .t-role {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+      letter-spacing: 0.03em;
+    }
+
+    .t-dots {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 1.4rem;
+    }
+
+    .t-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-400);
+    }
+
+    .t-dot:nth-child(2),
+    .t-dot:nth-child(3) {
+      opacity: 0.4;
+    }
+
+
+    .contact-section {
+      background: var(--green-800);
+      padding: 100px 0;
+    }
+
+    .contact-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 40px;
+    }
+
+    .contact-inner p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem 1.8rem;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .contact-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(201, 168, 76, 0.4);
+    }
+
+    .limited-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      color: var(--gold-300);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.3rem;
+      border-radius: 100px;
+      margin-bottom: 2.5rem;
+    }
+
+    footer {
+      background: var(--green-900);
+      padding: 80px 0 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 3rem;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-brand h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-brand h3 span {
+      color: var(--gold-400);
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.35);
+      max-width: 280px;
+      line-height: 1.7;
+    }
+
+    .footer-links h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.22);
+    }
+
+    @media (max-width: 1200px) {
+      .container {
+        padding: 0 32px;
+      }
+
+      .mentor-grid,
+      .enroll-inner {
+        gap: 4rem;
+      }
+
+      .mentor-card,
+      .course-card,
+      .enroll-card,
+      .t-card {
+        padding: 3rem;
+      }
+
+      .hero-stats {
+        gap: 2.75rem;
+      }
+    }
+
+    @media (max-width: 991px) {
+      nav {
+        padding: 0 24px;
+      }
+
+      .mentor-grid,
+      .enroll-inner {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 130px 24px 80px;
+      }
+
+      .hero-inner {
+        max-width: 760px;
+      }
+
+      .hero-stats {
+        gap: 2.5rem;
+        margin-top: 4rem;
+        padding-top: 2.5rem;
+      }
+
+      .contact-inner {
+        padding: 0 24px;
+      }
+
+      .hero-line {
+        left: 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      nav {
+        height: 70px;
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        top: 70px;
+        padding: 1.5rem 20px 2rem;
+        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .nav-links a {
+        text-align: center;
+      }
+
+      .nav-cta {
+        width: 100%;
+        padding: 0.9rem 1.2rem;
+      }
+
+      .nav-logo {
+        gap: 10px;
+      }
+
+      .nav-logo-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .nav-logo span {
+        font-size: 1.2rem;
+      }
+
+      section {
+        padding: 84px 0;
+      }
+
+      .hero {
+        padding: 112px 20px 72px;
+      }
+
+      .hero-badge {
+        margin-bottom: 2rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+      }
+
+      .hero-sub {
+        margin-bottom: 2.5rem;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .btn-gold,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+        padding: 0.95rem 1.2rem;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .hero-stat {
+        min-width: 0;
+      }
+
+      .hero-stat strong {
+        font-size: 2rem;
+      }
+
+      .mentor-card,
+      .course-card,
+      .enroll-card,
+      .t-card {
+        padding: 2.25rem 1.5rem;
+        border-radius: 20px;
+      }
+
+      .mentor-name {
+        font-size: 2.35rem;
+      }
+
+      .mentor-facts {
+        gap: 1.4rem;
+      }
+
+      .mentor-facts li {
+        gap: 1rem;
+      }
+
+      .fact-icon {
+        width: 42px;
+        height: 42px;
+      }
+
+      .heading-xl {
+        margin-bottom: 1.35rem;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .why-card {
+        padding: 2rem 1.4rem;
+      }
+
+      .contact-grid {
+        flex-direction: column;
+      }
+
+      .contact-item {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .course-badges {
+        justify-content: flex-start;
+      }
+
+      .badge {
+        width: 100%;
+        text-align: center;
+      }
+
+      .offer-list li {
+        align-items: flex-start;
+      }
+
+      .qr-box {
+        width: min(100%, 290px);
+        padding: 1rem;
+      }
+
+      .qr-box>svg {
+        width: 100%;
+        height: auto;
+      }
+
+      .batch-chip {
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero-line {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      nav {
+        padding: 0 16px;
+      }
+
+      .hero {
+        padding: 104px 16px 64px;
+      }
+
+      .hero h1 {
+        line-height: 0.95;
+      }
+
+      .hero-sub {
+        font-size: 0.98rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .label-tag {
+        gap: 8px;
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+      }
+
+      .label-tag::before {
+        width: 24px;
+      }
+
+      .mentor-card::after {
+        font-size: 6rem;
+        right: 12px;
+      }
+
+      .mentor-pills {
+        gap: 0.55rem;
+      }
+
+      .pill {
+        width: 100%;
+        text-align: center;
+      }
+
+      .course-card h3,
+      .why-card h4,
+      .enroll-card h3 {
+        line-height: 1.2;
+      }
+
+      .contact-inner {
+        padding: 0 16px;
+      }
+
+      .contact-item {
+        padding: 0.95rem 1rem;
+        font-size: 0.88rem;
+      }
+
+      .footer-top {
+        gap: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .footer-bottom {
+        margin-top: 1.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-mark">
+        <img src="assets/logo.png" alt="Arth Academy Logo" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+      <span>Arth Academy</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#features">Why Us</a></li>
+      <li><a href="#enroll" class="nav-cta">Enroll Free</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="home">
+    <div class="hero-mesh"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-line"></div>
+
+    <!-- Math Symbols Container — populated by JS -->
+    <div id="math-canvas" aria-hidden="true"></div>
+
+    <div class="hero-inner container">
+      <div class="hero-badge">New Batch Starting 15th April 2026</div>
+
+      <h1>From <em>Concepts</em><br>to Confidence</h1>
+
+      <p class="hero-sub">
+        Expert Mathematics coaching for Class 9–12 by Pankaj Sir —
+        IIT Kanpur graduate with 25+ years of mentorship. Your journey to success starts here.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://tinyurl.com/ArthAcademyAdmissionForm" target="_blank" class="btn-gold">
+          ✦ Book 2 Free Demo Classes
+        </a>
+        <a href="#courses" class="btn-outline">
+          Explore Courses ↓
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>25+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div class="hero-stat">
+          <strong>100+</strong>
+          <span>IIT Rankers</span>
+        </div>
+        <div class="hero-stat">
+          <strong>9–12</strong>
+          <span>Classes Covered</span>
+        </div>
+        <div class="hero-stat">
+          <strong>2</strong>
+          <span>Free Demo Classes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── MENTOR ─── -->
+  <section class="mentor-section" id="about">
+    <div class="container">
+      <div class="mentor-grid">
+
+        <div class="mentor-card reveal">
+          <div class="mentor-name">Pankaj Sir</div>
+          <div class="mentor-title">Your Expert Mathematics Mentor</div>
+          <div class="mentor-pills">
+            <span class="pill">M.Sc. Mathematics</span>
+            <span class="pill gold">IIT Kanpur</span>
+            <span class="pill">25+ Years Teaching</span>
+            <span class="pill gold">IIT-JEE Specialist</span>
+            <span class="pill">CBSE Expert</span>
+          </div>
+        </div>
+
+        <div class="reveal reveal-d2">
+          <div class="label-tag">Meet Your Mentor</div>
+          <h2 class="heading-xl">Learn from an <em>Expert</em></h2>
+          <ul class="mentor-facts">
+            <li>
+              <div class="fact-icon"><img src="assets/iit.svg" alt="IIT" width="28"></div>
+              <div class="fact-body">
+                <strong>M.Sc. Mathematics from IIT Kanpur</strong>
+                <p>One of India's most prestigious institutions, ensuring world-class mathematical foundations.</p>
+              </div>
+            </li>
+            <li>
+              <div class="fact-icon"><img src="assets/25+.svg" alt="25+" width="28"></div>
+              <div class="fact-body">
+                <strong>25+ Years of IIT-JEE Preparation</strong>
+                <p>Deep expertise in developing problem-solving skills that crack India's toughest engineering entrance.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="fact-icon"><img src="assets/rank.svg" alt="Ranks" width="28"></div>
+              <div class="fact-body">
+                <strong>Produced Many IIT Rankers</strong>
+                <p>A proven track record of transforming students into confident, exam-ready achievers.</p>
+              </div>
+            </li>
+            <li>
+              <div class="fact-icon">💡</div>
+              <div class="fact-body">
+                <strong>Concept-First Methodology</strong>
+                <p>Building deep understanding over rote memorization, so students excel in any exam format.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── COURSES ─── -->
+  <section class="courses-section" id="courses">
+    <div class="container">
+      <div class="label-tag reveal">Courses Offered</div>
+      <h2 class="heading-xl reveal reveal-d1">Choose Your <em>Path to Excellence</em></h2>
+
+      <div class="courses-grid">
+        <div class="course-card reveal reveal-d2">
+          <span class="course-tag">Class 9 – 10</span>
+          <h3>Mathematics Foundations</h3>
+          <ul class="course-features">
+            <li>CBSE Board Exam Preparation</li>
+            <li>Concept Clarity & Confidence Building</li>
+            <li>Chapter-wise Practice Tests</li>
+            <li>Daily Practice Problems (DPP)</li>
+            <li>Weekly Progress Tracking</li>
+            <li>Personal Doubt Clearing Sessions</li>
+          </ul>
+        </div>
+
+        <div class="course-card gold-top reveal reveal-d3">
+          <span class="course-tag alt">Class 11 – 12</span>
+          <h3>Board + JEE Excellence</h3>
+          <ul class="course-features">
+            <li>CBSE Board + JEE Main & Advanced</li>
+            <li>Advanced Problem Solving & Strategy</li>
+            <li>IIT-JEE Oriented Practice</li>
+            <li>Past Year Paper Analysis</li>
+            <li>Mock Tests & Performance Reports</li>
+            <li>Dedicated Doubt Sessions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="course-badges reveal reveal-d4">
+        <span class="badge">✓ Online Classes Available</span>
+        <span class="badge">✓ Affordable Monthly Fee</span>
+        <span class="badge">✓ No Heavy Upfront Cost</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── WHY ARTH ACADEMY ─── -->
+  <section class="why-section" id="features">
+    <div class="container">
+      <div class="label-tag reveal" style="color:rgba(201,168,76,0.7)">Why Choose Us</div>
+      <h2 class="heading-xl light reveal reveal-d1" style="margin-bottom:4rem">Why <em>Arth Academy</em>?</h2>
+
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><img src="assets/exam.png" alt="Tests" width="32"></div>
+          <h4>Weekly Tests & Progress Tracking</h4>
+          <p>Stay on top of your learning curve with structured weekly assessments and detailed performance reports that
+            show real growth.</p>
+        </div>
+        <div class="why-card reveal reveal-d1">
+          <div class="why-icon"><img src="assets/doubt.png" alt="Doubts" width="32"></div>
+          <h4>Dedicated Doubt Solving Sessions</h4>
+          <p>No question goes unanswered. Scheduled doubt-clearing sessions ensure complete concept mastery before
+            moving forward.</p>
+        </div>
+        <div class="why-card reveal reveal-d2">
+          <div class="why-icon"><img src="assets/concept.png" alt="Concepts" width="32"></div>
+          <h4>Concept-Based Learning</h4>
+          <p>Deep understanding over shortcuts. Students learn the "why" behind every formula, enabling them to solve
+            unseen problems with ease.</p>
+        </div>
+        <div class="why-card reveal reveal-d3">
+          <div class="why-icon"><img src="assets/mentor.png" alt="Mentorship" width="32"></div>
+          <h4>Personal Mentorship</h4>
+          <p>One-on-one attention from Pankaj Sir — tracking each student's unique strengths and tailoring guidance
+            accordingly.</p>
+        </div>
+        <div class="why-card reveal reveal-d1">
+          <div class="why-icon"><img src="assets/books.png" alt="Practice" width="32"></div>
+          <h4>Daily Practice Problems (DPP)</h4>
+          <p>Consistent daily practice with curated problem sets that progressively build speed, accuracy, and
+            problem-solving instinct.</p>
+        </div>
+        <div class="why-card reveal reveal-d2">
+          <div class="why-icon"><img src="assets/online.png" alt="Online" width="32"></div>
+          <h4>Interactive Online Classes</h4>
+          <p>Experience the same focus and quality as an in-person class from the comfort of your home, with real-time
+            doubt clearing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── ENROLL ─── -->
+  <section class="enroll-section" id="enroll">
+    <div class="container">
+      <div class="enroll-inner">
+
+        <div>
+          <div class="label-tag reveal">Limited Seats Available</div>
+          <h2 class="heading-xl reveal reveal-d1">Start Your Journey <em>Today</em></h2>
+          <p style="color:var(--text-muted);line-height:1.8;margin-bottom:2.5rem;font-size:0.95rem"
+            class="reveal reveal-d2">
+            New batch commencing <strong>15th April 2026</strong>. Seats are limited — secure yours now
+            with 2 completely free demo classes to experience the Arth Academy difference firsthand.
+          </p>
+          <ul class="offer-list reveal reveal-d3">
+            <li>2 Free Demo Classes — Zero commitment, full experience</li>
+            <li>Affordable Monthly Fee — No heavy upfront cost</li>
+            <li>New Batch Starts: 15th April 2026</li>
+            <li>Interactive Online Sessions</li>
+            <li>For Classes 9–12 (CBSE + JEE)</li>
+          </ul>
+          <div class="reveal reveal-d4" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center">
+            <a href="https://tinyurl.com/ArthAcademyAdmissionForm" target="_blank" class="btn-gold">
+              ✦ Register Now — It's Free
+            </a>
+            <a href="https://wa.me/918796019015" target="_blank" class="btn-outline"
+              style="color:var(--text-dark);border-color:var(--border)">
+              <img src="assets/whatsapp.png" alt="WhatsApp"
+                style="width: 18px; height: auto; vertical-align: middle; margin-right: 8px;"> WhatsApp: 8796019015
+            </a>
+          </div>
+        </div>
+
+        <div class="enroll-card reveal reveal-d2">
+          <div class="enroll-card-label">Scan to Register</div>
+          <h3>Quick Admission</h3>
+          <div class="qr-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 431 431" width="200" height="200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="431" height="431" viewBox="0 0 37 37"
+                shape-rendering="crispEdges" x="0" y="0">
+                <path fill="#ffffff" d="M0 0h37v37H0z" />
+                <path stroke="#000000"
+                  d="M0 0.5h7m3 0h2m1 0h1m2 0h1m1 0h9m3 0h7M0 1.5h1m5 0h1m1 0h5m5 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m1 0h9m2 0h1m2 0h2m4 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h2m1 0h1m1 0h4m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h5m1 0h1m2 0h1m5 0h1m1 0h2m1 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 7.5h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m4 0h2M2 8.5h1m2 0h8m5 0h1m1 0h5m3 0h2m1 0h5M1 9.5h1m2 0h2m1 0h1m2 0h1m7 0h1m3 0h4m2 0h1m1 0h2m1 0h4M1 10.5h4m1 0h1m1 0h2m1 0h5m4 0h3m1 0h1m2 0h4m3 0h1m1 0h1M0 11.5h1m2 0h2m2 0h1m2 0h2m3 0h2m1 0h1m1 0h5m1 0h3m4 0h1m2 0h1M0 12.5h1m1 0h1m2 0h2m1 0h1m2 0h3m7 0h1m2 0h1m3 0h1m1 0h2m1 0h1m1 0h2M2 13.5h4m2 0h1m1 0h1m1 0h1m2 0h1m1 0h5m3 0h7m2 0h3M0 14.5h1m2 0h6m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m1 0h2m3 0h3m1 0h1M0 15.5h1m1 0h4m1 0h2m4 0h3m1 0h2m7 0h1m1 0h1m4 0h1m2 0h1M1 16.5h1m1 0h2m1 0h4m1 0h1m3 0h6m3 0h1m1 0h6M0 17.5h1m2 0h1m3 0h3m1 0h3m2 0h2m1 0h1m3 0h1m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1M0 18.5h1m5 0h1m1 0h1m1 0h2m2 0h8m3 0h1m1 0h1m1 0h3m2 0h1m1 0h1M0 19.5h2m5 0h3m2 0h6m1 0h2m1 0h2m2 0h2m1 0h2m2 0h1M0 20.5h7m2 0h1m1 0h2m4 0h1m3 0h2m1 0h1m2 0h2m1 0h1M3 21.5h1m5 0h1m1 0h1m1 0h2m3 0h1m2 0h1m3 0h3m2 0h2m1 0h1m2 0h1M3 22.5h2m1 0h3m3 0h1m4 0h3m2 0h1m1 0h1m2 0h3m1 0h4m1 0h1M1 23.5h4m2 0h1m1 0h2m2 0h1m1 0h1m2 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m1 0h1M3 24.5h2m1 0h1m1 0h3m1 0h3m1 0h2m4 0h1m1 0h1m3 0h1m1 0h1m2 0h1m2 0h1M3 25.5h1m4 0h2m4 0h2m2 0h1m1 0h1m1 0h1m3 0h3m1 0h2m2 0h3M0 26.5h2m1 0h6m1 0h3m1 0h3m1 0h6m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1M2 27.5h3m2 0h1m1 0h1m1 0h3m2 0h3m1 0h2m2 0h1m2 0h4m2 0h1m1 0h1M0 28.5h4m2 0h1m2 0h1m3 0h1m3 0h1m3 0h1m2 0h1m3 0h5m2 0h2M8 29.5h3m1 0h1m1 0h1m1 0h1m2 0h1m2 0h4m2 0h1m3 0h2m2 0h1M0 30.5h7m1 0h4m6 0h4m1 0h1m4 0h1m1 0h1m1 0h3m1 0h1M0 31.5h1m5 0h1m1 0h1m1 0h1m1 0h3m1 0h2m1 0h1m1 0h1m4 0h3m3 0h2m1 0h1M0 32.5h1m1 0h3m1 0h1m3 0h1m1 0h1m2 0h1m1 0h2m1 0h2m1 0h3m1 0h6m2 0h1M0 33.5h1m1 0h3m1 0h1m2 0h1m2 0h2m2 0h1m1 0h3m2 0h3m1 0h1m5 0h1m2 0h1M0 34.5h1m1 0h3m1 0h1m1 0h4m1 0h1m1 0h2m2 0h1m3 0h6m3 0h1m1 0h3M0 35.5h1m5 0h1m5 0h1m2 0h1m3 0h1m1 0h3m2 0h1m1 0h3m2 0h1M0 36.5h7m2 0h2m3 0h2m2 0h1m1 0h1m2 0h3m2 0h2m1 0h1m4 0h1" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="150.85" height="150.85" viewBox="0 0 400 400" fill="none"
+                x="140.075" y="140.075">
+                <rect width="400" height="400" fill="white" />
+                <path
+                  d="M263.713 133.416C264.045 133.712 264.377 134.008 264.719 134.313C267.753 138.16 267.523 142.299 267.593 147.003C267.61 147.773 267.628 148.542 267.646 149.311C267.691 151.299 267.727 153.287 267.76 155.275C267.778 156.378 267.799 157.481 267.821 158.584C267.913 163.16 267.986 167.735 268.051 172.311C268.073 173.866 268.096 175.421 268.119 176.976C268.174 180.672 268.227 184.368 268.279 188.064C268.326 191.372 268.374 194.681 268.425 197.989C268.575 207.923 268.71 217.857 268.817 227.792C268.841 230.025 268.868 232.258 268.896 234.491C268.945 238.291 268.982 242.09 269.006 245.89C269.015 247.141 269.028 248.393 269.046 249.645C269.068 251.351 269.077 253.056 269.082 254.763C269.096 255.5 269.096 255.5 269.111 256.253C269.099 259.952 268.252 262.907 265.624 265.602C262.307 267.762 259.315 268.761 255.345 268.054C252.26 267.095 250.185 265.067 247.887 262.882C247.356 262.396 246.823 261.912 246.289 261.429C242.999 258.439 239.809 255.371 236.686 252.208C235.289 250.8 233.876 249.446 232.363 248.165C229.895 246.068 227.66 243.743 225.384 241.443C223.445 239.492 221.469 237.633 219.368 235.856C217.121 233.865 215.044 231.69 212.942 229.549C210.802 230.411 209.364 231.905 207.774 233.519C207.344 233.949 207.344 233.949 206.906 234.387C206.301 234.994 205.696 235.602 205.094 236.212C204.184 237.132 203.269 238.047 202.354 238.962C198.832 242.486 198.832 242.486 195.501 246.188C192.625 249.554 189.402 252.608 186.263 255.725C185.603 256.382 184.944 257.039 184.284 257.696C182.806 259.169 181.326 260.64 179.846 262.111C179.09 262.864 178.337 263.62 177.583 264.377C171.824 270.106 164.877 272.624 156.862 272.727C148.501 272.674 141.103 269.879 134.983 264.039C129.197 257.788 126.012 249.772 126.255 241.224C127.138 231.324 131.356 224.511 138.213 217.722C139.065 216.869 139.917 216.017 140.769 215.164C142.106 213.826 143.444 212.49 144.792 211.162C146.647 209.328 148.466 207.499 150.154 205.51C151.906 203.469 153.786 201.578 155.696 199.686C156.013 199.373 156.329 199.059 156.655 198.736C157.978 197.428 159.303 196.122 160.63 194.818C161.609 193.856 162.584 192.89 163.559 191.924C163.859 191.632 164.159 191.339 164.468 191.037C165.874 189.64 167.054 188.404 167.782 186.54C164.195 182.863 164.195 182.863 160.39 179.416C158.261 177.599 156.309 175.625 154.341 173.637C151.468 170.726 151.468 170.726 148.428 167.992C145.979 165.923 143.77 163.616 141.517 161.34C139.552 159.362 137.546 157.477 135.422 155.669C131.538 152.28 128.36 149.299 127.83 144.001C128.105 140.588 129.087 137.223 131.761 134.928C134.3 133.236 135.912 132.631 138.995 132.456C139.345 132.436 139.696 132.416 140.057 132.395C144.945 132.139 149.84 132.085 154.734 132.014C155.833 131.996 156.933 131.979 158.032 131.961C160.994 131.913 163.957 131.869 166.919 131.825C168.773 131.797 170.627 131.769 172.481 131.741C178.957 131.642 185.432 131.546 191.908 131.451C197.934 131.364 203.959 131.27 209.984 131.174C215.171 131.091 220.357 131.013 225.544 130.938C228.636 130.894 231.729 130.847 234.82 130.796C237.725 130.748 240.63 130.706 243.535 130.667C244.599 130.653 245.662 130.636 246.725 130.617C260.476 130.374 260.476 130.374 263.713 133.416Z"
+                  fill="#000000" />
+                <path
+                  d="M100.58 148.906C100.934 148.906 101.289 148.906 101.655 148.906C101.871 149.813 101.871 149.813 102.092 150.739C104.38 159.89 107.821 166.41 114.558 173.099C115.32 173.866 116.083 174.634 116.846 175.402C120.19 178.77 123.552 182.121 126.923 185.464C126.177 187.151 125.313 188.272 123.993 189.555C123.626 189.917 123.258 190.278 122.879 190.651C122.495 191.024 122.111 191.397 121.715 191.781C119.132 194.299 116.656 196.847 114.305 199.583C113.333 200.687 112.283 201.676 111.198 202.668C100.213 213.596 94.6619 229.469 94.4977 244.737C94.5553 260.864 100.932 276.058 111.989 287.78C124.29 299.683 139.963 305.665 156.98 305.58C171.011 305.241 184.649 300.153 195.201 290.838C195.659 290.444 196.117 290.05 196.589 289.645C198.62 287.866 200.526 286.082 202.286 284.033C204.62 281.33 207.146 278.833 209.683 276.322C210.153 275.854 210.623 275.386 211.108 274.904C212.255 273.763 213.405 272.622 214.555 271.483C216.062 272.169 217.144 272.87 218.293 274.06C218.579 274.353 218.866 274.645 219.161 274.947C219.46 275.257 219.758 275.566 220.065 275.885C222.322 278.187 224.594 280.406 227.061 282.485C228.013 283.326 228.85 284.224 229.709 285.159C235.844 291.363 244.369 294.156 252.726 295.676C251.867 297.822 250.362 299.243 248.738 300.825C248.45 301.111 248.162 301.396 247.865 301.689C246.946 302.6 246.022 303.506 245.098 304.412C240.023 309.38 240.023 309.38 235.251 314.635C231.168 319.368 226.495 323.598 221.544 327.396C221.252 327.624 220.96 327.853 220.659 328.088C215.35 332.226 209.781 335.603 203.802 338.686C203.462 338.863 203.121 339.04 202.77 339.223C177.82 352.043 147.987 352.947 121.551 344.467C102.55 338.026 85.5976 325.867 73.1609 310.192C72.7403 309.685 72.3196 309.179 71.8862 308.657C58.9615 292.671 50.659 270.755 50.4528 250.146C50.4449 249.492 50.4449 249.492 50.4369 248.824C50.3445 239.177 50.4092 229.834 52.7314 220.409C52.8523 219.916 52.9733 219.423 53.0979 218.915C57.6218 201.012 66.2292 185.179 78.8638 171.766C79.6653 170.89 80.4282 169.988 81.1958 169.083C84.2723 165.549 87.6742 162.313 91.0032 159.02C92.3565 157.681 93.708 156.34 95.0584 154.998C95.3648 154.696 95.6712 154.394 95.9868 154.083C97.302 152.776 98.5016 151.501 99.6477 150.037C99.9552 149.664 100.263 149.29 100.58 148.906Z"
+                  fill="#000000" />
+                <path
+                  d="M311.825 72.7769C333.644 92.0922 347.161 117.601 349.363 146.856C349.418 148.077 349.464 149.298 349.497 150.519C349.519 151.049 349.54 151.579 349.562 152.126C350.125 177.645 341.057 203.35 324.229 222.56C323.863 222.985 323.497 223.41 323.12 223.847C320.417 226.923 317.55 229.819 314.625 232.682C313.065 234.218 311.573 235.777 310.15 237.441C307.755 240.215 305.158 242.787 302.563 245.371C301.705 246.227 300.849 247.085 299.994 247.944C299.45 248.488 298.905 249.032 298.36 249.576C297.869 250.066 297.378 250.557 296.872 251.062C295.735 252.129 295.735 252.129 295.198 252.129C295.056 245.534 294.916 238.939 294.777 232.344C294.713 229.28 294.648 226.216 294.582 223.153C294.518 220.186 294.455 217.22 294.394 214.253C294.37 213.132 294.346 212.01 294.322 210.888C294.254 207.769 294.195 204.65 294.148 201.53C294.13 200.466 294.11 199.402 294.086 198.338C294.051 196.718 294.027 195.098 294.005 193.478C293.986 192.745 293.986 192.745 293.966 191.996C293.935 188.526 294.632 186.441 296.808 183.671C304.625 173.279 306.13 157.181 304.608 144.735C302.587 131.242 296.401 120.043 287.133 110.197C286.844 109.873 286.554 109.549 286.256 109.215C276.198 98.3993 260.662 93.1456 246.253 92.3678C234.308 92.0601 220.451 94.8494 210.845 102.398C207.491 104.958 204.85 105.285 200.705 105.237C200.09 105.243 199.476 105.248 198.843 105.254C196.827 105.269 194.812 105.262 192.796 105.254C191.393 105.26 189.989 105.267 188.586 105.276C185.279 105.295 181.972 105.297 178.664 105.293C174.896 105.29 171.129 105.304 167.361 105.321C159.616 105.354 151.871 105.364 144.127 105.359C144.899 103.746 145.651 102.635 146.939 101.386C147.282 101.048 147.625 100.711 147.979 100.363C148.338 100.016 148.697 99.6684 149.066 99.3106C149.77 98.626 150.472 97.94 151.172 97.2526C151.639 96.8001 151.639 96.8001 152.116 96.3385C153.129 95.2868 154.085 94.2113 155.041 93.1079C156.903 90.9665 158.845 88.9237 160.839 86.9055C161.371 86.3667 161.371 86.3667 161.914 85.817C162.663 85.0613 163.412 84.3064 164.162 83.5523C164.91 82.7975 165.657 82.0403 166.4 81.2805C201.721 45.204 256.897 37.6733 311.825 72.7769Z"
+                  fill="#000000" />
+              </svg>
+            </svg>
+          </div>
+          <a class="qr-link" href="https://tinyurl.com/ArthAcademyAdmissionForm" target="_blank">
+            tinyurl.com/ArthAcademyAdmissionForm
+          </a>
+          <div class="batch-chip">
+            <img src="assets/calendar.png" alt="Batch"
+              style="width: 18px; height: auto; vertical-align: middle; margin-right: 6px;"> New Batch: 15th April 2026
+            <span style="opacity:0.6;font-weight:400">· Limited Seats</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <!-- ─── STUDENTS SAY ─── -->
+      <div class="label-tag reveal">Student Stories</div>
+      <h2 class="heading-xl reveal reveal-d1" style="margin-bottom:4rem">What Our <em>Students Say</em></h2>
+
+      <div class="testimonials-grid" style="margin-bottom: 8rem;">
+        <div class="t-card reveal">
+          <div class="t-dots">
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+          </div>
+          <p class="t-quote">"Pankaj Sir's approach to concepts completely changed how I see Mathematics. I went from
+            dreading maths to scoring 96/100 in my boards. His DPP sessions are gold!"</p>
+          <div class="t-author">Rahul K.</div>
+          <div class="t-role">Class 12 Student</div>
+        </div>
+
+        <div class="t-card reveal reveal-d1">
+          <div class="t-dots">
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+          </div>
+          <p class="t-quote">"The JEE prep here is unlike any coaching I tried before. Sir doesn't just teach formulas —
+            he makes you understand the logic. Got AIR 847 in JEE Advanced!"</p>
+          <div class="t-author">Sneha M.</div>
+          <div class="t-role">IIT-JEE Aspirant</div>
+        </div>
+
+        <div class="t-card reveal reveal-d2">
+          <div class="t-dots">
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+          </div>
+          <p class="t-quote">"The personal attention at Arth Academy was instrumental in clearing my doubts. The
+            problem-solving techniques taught by Pankaj Sir are simple yet extremely effective."</p>
+          <div class="t-author">Aman V.</div>
+          <div class="t-role">Class 11 Student</div>
+        </div>
+      </div>
+
+      <!-- ─── PARENTS SAY ─── -->
+      <div class="label-tag reveal">Parent Feedback</div>
+      <h2 class="heading-xl reveal reveal-d1" style="margin-bottom:4rem">What Our <em>Parents Say</em></h2>
+
+      <div class="testimonials-grid">
+        <div class="t-card reveal">
+          <div class="t-dots">
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+          </div>
+          <p class="t-quote">"My son struggled with Class 9 Maths for two years. After joining Arth Academy, his
+            confidence skyrocketed. The weekly tests and personal attention made all the difference."</p>
+          <div class="t-author">Mrs. Sharma</div>
+          <div class="t-role">Parent of Class 10 Student</div>
+        </div>
+
+        <div class="t-card reveal reveal-d1">
+          <div class="t-dots">
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+          </div>
+          <p class="t-quote">"We were worried about our daughter's JEE preparation, but Pankaj Sir's structured approach
+            and regular feedback gave us immense peace of mind. Highly recommended!"</p>
+          <div class="t-author">Mr. Kapoor</div>
+          <div class="t-role">Parent of Class 12 Student</div>
+        </div>
+
+        <div class="t-card reveal reveal-d2">
+          <div class="t-dots">
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+            <div class="t-dot"></div>
+          </div>
+          <p class="t-quote">"The level of commitment Pankaj Sir shows towards each student is rare. The way he
+            simplifies complex calculus and coordinate geometry is truly remarkable. My son loves his classes!"</p>
+          <div class="t-author">Dr. Gupta</div>
+          <div class="t-role">Parent of JEE Aspirant</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── CONTACT ─── -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="label-tag reveal" style="justify-content:center;color:rgba(201,168,76,0.7)">Get in Touch</div>
+      <h2 class="heading-xl light reveal reveal-d1" style="margin-bottom:1.5rem">Ready to <em>Begin?</em></h2>
+      <p class="reveal reveal-d2">
+        Reach out via call, <a href="https://wa.me/918796019015" target="_blank"
+          style="color:var(--gold-300);text-decoration:none;">WhatsApp</a>, or fill in the registration form.
+        2 free demo classes — no commitment required. Limited seats, so act fast!
+      </p>
+      <div class="limited-chip reveal reveal-d2">⚡ Limited Seats Available</div>
+      <div class="contact-grid reveal reveal-d3">
+        <a href="tel:8796019015" class="contact-item"><img src="assets/phone.png" alt="Phone"
+            style="width: 18px; height: auto; vertical-align: middle; margin-right: 8px;"> Call: 8796019015</a>
+        <a href="https://wa.me/918796019015" target="_blank" class="contact-item"><img src="assets/whatsapp.png"
+            alt="WhatsApp" style="width: 20px; height: auto; vertical-align: middle; margin-right: 8px;"> WhatsApp
+          Us</a>
+        <a href="https://tinyurl.com/ArthAcademyAdmissionForm" target="_blank" class="contact-item"><img
+            src="assets/form.png" alt="Form"
+            style="width: 18px; height: auto; vertical-align: middle; margin-right: 8px;"> Admission Form</a>
+      </div>
+      <div class="reveal reveal-d4">
+        <a href="https://tinyurl.com/ArthAcademyAdmissionForm" target="_blank" class="btn-gold">
+          ✦ Book Your Free Demo Today
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Arth <span>Academy</span></h3>
+          <p>Expert Mathematics coaching for Class 9–12. From concepts to confidence.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#features">Why Us</a></li>
+            <li><a href="#enroll">Enroll</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:8796019015"><img src="assets/phone.png" alt="Phone"
+                  style="width: 14px; height: auto; vertical-align: middle; margin-right: 6px;"> 8796019015</a></li>
+            <li><a href="https://wa.me/918796019015" target="_blank"><img src="assets/whatsapp.png" alt="WhatsApp"
+                  style="width: 16px; height: auto; vertical-align: middle; margin-right: 6px;"> WhatsApp</a></li>
+            <li><a href="https://tinyurl.com/ArthAcademyAdmissionForm" target="_blank"><img src="assets/form.png"
+                  alt="Form" style="width: 14px; height: auto; vertical-align: middle; margin-right: 6px;"> Register
+                Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Arth Academy. All rights reserved.</p>
+        <p>Designed for Excellence</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    /* ─── NAVBAR SCROLL ─── */
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* ─── HAMBURGER ─── */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    const setMenuState = (open) => {
+      navLinks.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open && window.innerWidth <= 991 ? 'hidden' : '';
+    };
+
+    hamburger.addEventListener('click', () => {
+      setMenuState(!navLinks.classList.contains('open'));
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => setMenuState(false));
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 991) setMenuState(false);
+    });
+
+    /* ─── SCROLL REVEAL ─── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    /* ─── MATH SYMBOLS — THE RIGHT WAY ─── */
+    (function spawnMathSymbols() {
+      const symbols = [
+        '∫', 'π', '√', '∑', 'Δ', 'θ', 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η',
+        'λ', 'μ', 'ν', 'ξ', 'ρ', 'σ', 'τ', 'φ', 'χ', 'ψ', 'ω', '∞', '∏',
+        '∂', '∇', '≈', '≠', '≤', '≥', '±', '×', '÷', '∛', '∝', '∈', '∩',
+        '∪', '⊂', '⊆', '⊕', '⊗', 'Θ', 'Λ', 'Ξ', 'Ψ', 'Ω'
+      ];
+
+      const canvas = document.getElementById('math-canvas');
+      const heroEl = document.querySelector('.hero');
+
+      // We create ~55 symbols with varied sizes and positions
+      const count = 55;
+
+      for (let i = 0; i < count; i++) {
+        const sym = document.createElement('span');
+        sym.className = 'msym';
+        sym.textContent = symbols[i % symbols.length];
+
+        // Random horizontal position
+        const left = (Math.random() * 98) + '%';
+        // Random font size between 2.5rem and 7rem
+        const size = (Math.random() * 4.5 + 2.5).toFixed(1) + 'rem';
+        // Random duration 14s–28s
+        const duration = (Math.random() * 14 + 14).toFixed(1) + 's';
+        // Random delay so they don't all start together
+        const delay = (Math.random() * 20).toFixed(1) + 's';
+        // Slight opacity variation
+        const opacity = (Math.random() * 0.12 + 0.06).toFixed(2);
+
+        sym.style.left = left;
+        sym.style.fontSize = size;
+        sym.style.animationDuration = duration;
+        sym.style.animationDelay = '-' + delay;
+        sym.style.color = `rgba(201, 168, 76, ${opacity})`;
+
+        canvas.appendChild(sym);
+      }
+    })();
+  </script>
+
+</body>
+
+</html>
